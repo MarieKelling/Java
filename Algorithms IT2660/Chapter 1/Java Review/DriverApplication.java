@@ -1,4 +1,4 @@
-public class UsingPersonApp
+public class DriverApplication
 {
 
 	public static void main(String[] args)
