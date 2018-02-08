@@ -25,15 +25,15 @@ public class StackApplication
 		System.out.println(stack.push(list3));
 		System.out.println(); 
 		
-		System.out.println("showAll method invoked - Should Display Peter, Paul, & Mary Listings: "); 
+		System.out.println("showAll Method Invoked - Should Display Peter, Paul, & Mary Listings: "); 
 		stack.showAll(); 
 		System.out.println(); 
 		
-		System.out.println("**Re-initialize the stack**");  
+		System.out.println("**Re-initialize The Stack**");  
 		stack.reset(); 
 		System.out.println(); 
 		
-		System.out.println("showAll method invoked - Should display nothing: "); 
+		System.out.println("showAll Method Invoked - Should Display Nothing: "); 
 		stack.showAll(); 
 		System.out.println(); 
 		
@@ -56,7 +56,7 @@ public class StackApplication
 		System.out.println(temp.toString());
 		System.out.println(); 
 		
-		System.out.println("showAll Method - Should Display Nothing: "); 
+		System.out.println("showAll Method Invoked - Should Display Nothing: "); 
 		stack.showAll(); 
 		System.out.println(); 
 		

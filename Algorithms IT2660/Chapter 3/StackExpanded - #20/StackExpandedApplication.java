@@ -30,7 +30,7 @@ public class StackExpandedApplication
 		stack.showAll(); 
 		System.out.println(); 
 		
-		System.out.println("**Re-initialized The Stack**");  
+		System.out.println("**Re-initialize The Stack**");  
 		stack.reset(); 
 		System.out.println(); 
 		
