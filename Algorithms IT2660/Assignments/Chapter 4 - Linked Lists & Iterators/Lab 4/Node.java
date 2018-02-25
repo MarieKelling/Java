@@ -1,31 +1,25 @@
 public class Node
 {
-	private String Value;
-	private Node NextNode; 
+	private String Value;      
+	private Node NextNode;     
 	
-	public Node(String val)
+	public Node(String val)    //Constructor 
 	{
 		Value = val;
 	}
-	
-	public Node()
-	{
+   
+   public String getValue()
+   {
+      return Value; 
+   }
 		
-	}
-	
-	public String GetValue() 
-	{
-		return Value; 
-	}
-	
-	public Node GetNextNode()
+	public Node getNextNode()   //Returns the current NextNode
 	{
       return NextNode; 
 	}
 	
-	public void SetNextNode(Node node)
+	public void setNextNode(Node node)  //Sets the NextNode property of the Node that calls it 
 	{
 		NextNode = node;  
 	}
-	
 }
