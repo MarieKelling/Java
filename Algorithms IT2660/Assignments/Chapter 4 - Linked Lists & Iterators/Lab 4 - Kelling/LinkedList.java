@@ -14,7 +14,7 @@ public class LinkedList
 	
    public Node getNodeAtPosition(int position)
    {
-      Node walker = Root;           //this - put in Node class
+      Node walker = Root;                       //this - put in Node class
       
       for(int i = 0; i < position; i++) {
          walker = walker.getNextNode();
@@ -31,14 +31,14 @@ public class LinkedList
       } 
       //Edge Case 2: 
       else if  (position == Size)  {
-         return append(newNode);
+         return append(newNode);    //Returns the node that Root should point at/reference 
       }
       //General Case: 
       else  {
-   		Node back = getNodeAtPosition(position - 1); //back represents the person being cut in line
-         newNode.setNextNode(back.getNextNode()); //Points the arg-node at the node back was pointed to
-         back.setNextNode(newNode);          //Points back to the new node --> newNode cuts back in line
-         return newNode; //this - put in Node class
+   		Node previous = getNodeAtPosition(position - 1); //previous represents the person being cut in line  --> newNode is cutting previous in line
+         newNode.setNextNode(previous.getNextNode()); //Points the newNode at the node previous was originally pointing to
+         previous.setNextNode(newNode);          //Points previous to the new node --> newNode has cut previous in line
+         return newNode; //this - in Node class 
          }
 	}
  
@@ -47,10 +47,10 @@ public class LinkedList
    //Edge Case 1: Inserting a Node in the last position
    public Node append(Node node)     
    {
-      Last.setNextNode(node);  //Sets the current Last's NextNode property to the node being appended
-      Last = node;             //Points current Last node reference to the node being appended 
+      Last.setNextNode(node);  //Takes the node currently referenced by Last, & sets its NextNode property to the node being appended
+      Last = node;             //Takes the reference node Last, & points it to the node being appended 
       Size++;
-      return node;             //Returns the node that... Last should point at? 
+      return node;              
    }
          //Sub-Method
          public int getListSize()
@@ -69,11 +69,11 @@ public class LinkedList
    {
       newRoot.setNextNode(this.Root); 
       this.Root = newRoot;
-      return newRoot;
+      return newRoot;               //Returns the node that Root should point at/reference 
    }
    
    public void print() {
-      Node walker = this.Root;
+      Node walker = this.Root;               //Points walker to the current Root 
       for (int i=0; i<this.getListSize(); i++) {
          System.out.println(walker.getValue());
          walker = walker.getNextNode();
