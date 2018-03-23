@@ -2,7 +2,14 @@ public class MergeSort
 {
 	public static void main (String[] args)
 	{  
-		int[] list = {1, 4, 8, 12, 15, 9, 10, 4, 18, 3, 11, 22, 17, 6, 13, 14}; //16 integer array 
+      //Delcare array
+		int[] list = new int[10]; 
+      
+      //Populate array w random numbers
+      for (int i = 0; i < list.length; i++)
+      {
+         list[i] = (int) Math.floor(Math.random() * 101); 
+      }                      
 	      
       System.out.println("Before Sorting The List: ");
       printList(list);
@@ -27,7 +34,8 @@ public class MergeSort
       {
          int mid = list.length/2;
          int[] left = new int[mid];
-         int[] right = new int[list.length - mid];  
+         int[] right = new int[list.length - mid];
+         int[] result = new int[list.length];   
                  
          for(int i = 0; i < mid; i++)
       	{
@@ -37,7 +45,8 @@ public class MergeSort
          int x = 0;
          for(int j = mid; j < list.length; j++)
       	{
-            right[x] = list[j]; 
+            right[x] = list[j];
+            x++;  
      		}
          
          //Recursive Calls: 
@@ -45,7 +54,9 @@ public class MergeSort
          right = merge_sort(right);
          
          //Call Subroutine: 
-         return merge(left, right);    
+         result = merge(left, right); 
+         
+         return result;    
        }
     }
     
@@ -53,8 +64,45 @@ public class MergeSort
     {
       int resultLength = left.length + right.length; 
       int[] result = new int[resultLength]; 
-    
+      int leftIndex = 0;
+      int rightIndex = 0;
+      int resultIndex = 0; 
+      
+      while (leftIndex < left.length || rightIndex < right.length)
+      {
+         if (leftIndex < left.length && rightIndex < right.length)
+         {
+            if (left[leftIndex] <= right[rightIndex]) //left is smaller --> placed in the sorted list first
+            {
+               result[resultIndex] = left[leftIndex];
+               leftIndex++;
+               resultIndex++; 
+            }
+            else                                      //right is smaller --> placed in the sorted list first
+            {
+               result[resultIndex] = right[rightIndex];
+               rightIndex++;
+               resultIndex++; 
+            }
+
+         }
+         //Only left or only right has elements in the list
+         else if (leftIndex < left.length)
+         {
+            result[resultIndex] = left[leftIndex];
+               leftIndex++;
+               resultIndex++;
+         }
+         else if (rightIndex < right.length)
+         {
+            result[resultIndex] = right[rightIndex];
+               rightIndex++;
+               resultIndex++;
+         }
+      }
+      return result; 
     }
+    
     
     public static void printList(int[] list)
     {
