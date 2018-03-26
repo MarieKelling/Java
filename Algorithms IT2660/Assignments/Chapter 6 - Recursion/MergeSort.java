@@ -70,13 +70,16 @@ public class MergeSort
 		  {
 			 if (leftIndex < left.length && rightIndex < right.length)
 			 {
-				if (left[leftIndex] <= right[rightIndex]) //left is smaller --> placed in the sorted list first
+				//left is smaller --> placed in the sorted list first
+				if (left[leftIndex] <= right[rightIndex]) 
 				{
 				   result[resultIndex] = left[leftIndex];
 				   leftIndex++;
 				   resultIndex++; 
 				}
-				else                                     				    //right is smaller --> placed in the sorted list first
+				
+				//right is smaller --> placed in the sorted list first
+				else                            
 				{
 				   result[resultIndex] = right[rightIndex];
 				   rightIndex++;
