@@ -24,7 +24,7 @@ public class Dijkstra{
 
 		// Print the minimum Distance.
 		for(Vertex v:g.getVertices()){
-			System.out.print("Vertex - "+v+" , Dist - "+ v.minDistance+" , Path - ");
+			System.out.print("Vertex: "+v+", Dist: "+ v.minDistance + ", Path: ");
 			for(Vertex pathvert:v.path) {
 				System.out.print(pathvert+" ");
 			}
